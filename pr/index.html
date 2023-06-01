@@ -1,0 +1,679 @@
+<!-- <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>DEV</title><style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+            color: rgb(55, 53, 47);
+        }
+    }
+    
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+    
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+    
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+    
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+    
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+    
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    
+    mark {
+        background-color: transparent;
+    }
+    
+    .indented {
+        padding-left: 1.5em;
+    }
+    
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+    
+    @page {
+        margin: 1in;
+    }
+    
+    .collection-content {
+        font-size: 0.875rem;
+    }
+    
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        padding: 0 1em;
+    }
+    
+    .column:first-child {
+        padding-left: 0;
+    }
+    
+    .column:last-child {
+        padding-right: 0;
+    }
+    
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+    
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+    
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+    
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+    
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+    
+    table {
+        border-left: none;
+        border-right: none;
+    }
+    
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+    
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+    
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+    
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+    
+    ul > li {
+        list-style: disc;
+    }
+    
+    ul.to-do-list {
+        text-indent: -1.7em;
+    }
+    
+    ul.to-do-list > li {
+        list-style: none;
+    }
+    
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+    
+    ul.toggle > li {
+        list-style: none;
+    }
+    
+    ul {
+        padding-inline-start: 1.7em;
+    }
+    
+    ul > li {
+        padding-left: 0.1em;
+    }
+    
+    ol {
+        padding-inline-start: 1.6em;
+    }
+    
+    ol > li {
+        padding-left: 0.2em;
+    }
+    
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+    
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+    
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+    
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+    
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+    
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+    
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+    
+    .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+    }
+    .simple-table td {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table th {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+    }
+    .simple-table-header {
+        font-weight: 500;
+    }
+    
+    time {
+        opacity: 0.5;
+    }
+    
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+    
+    img.icon {
+        border-radius: 3px;
+    }
+    
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+    
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+    }
+    
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+    
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+    
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+    
+    p > .user {
+        opacity: 0.5;
+    }
+    
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+    
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+    
+    code {
+        color: #eb5757;
+    }
+    
+    .code {
+        padding: 1.5em 1em;
+    }
+    
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+    
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+    
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+    
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+    
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+    
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+    
+    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .highlight-default {
+        color: rgba(55, 53, 47, 1);
+    }
+    .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .block-color-default {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+    .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+    .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+    .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+    .select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+    .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+    .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+    .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+    .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+    .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+    
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+    
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+        
+    </style></head><body><article id="93cc21b6-3849-4f06-b802-70f04d4f9609" class="page sans"><header><h1 class="page-title">DEV</h1></header><div class="page-body"><h1 id="dc463978-08c7-4174-b791-db1d14d9fbd9" class="">안드로이드(java, kotlin)</h1><figure id="6ee87a95-927c-4f6d-9c10-90d5727bb9b2"><a href="https://play.google.com/store/apps/details?id=com.ranpicklotto&amp;hl=ko&amp;gl=US" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">응답하라 로또 - Google Play 앱</div><div class="bookmark-description">응답하라 로또는 어떠한 개인정보도 취급하지 않습니다. ✔ 로또 당첨 통계를 기준으로 심플하게 원하는 설정으로 로또 번호 생성 ✔ 로또 QR코드로 바로 확인 또는 저장 후 추첨 날 자동 판별 ✔ 직접 입력 및 랜덤 생성으로 저장한 번호 매주 당첨번호 자동 확인 가능 ✔ 다양한 통계정보 ✔ 판매점 위치 확인 가능 ✔ 오류 및 건의 게시판으로 의견반영 ✔ 매주 추첨이 끝나는 순간 푸쉬알림 기능 ✔ 카카오톡을 이용한 번호 메시지 전송 혹시나 모를 오류나 나눔로또사이트가 불안정할 경우 등 잘못된 정보를 가져올 수 있으니 번호는 꼭 제차 동행복권 동행로또 공식 사이트에서 한 번 더 확인해주시면 감사하겠습니다.</div></div><div class="bookmark-href"><img src="https://www.gstatic.com/android/market_images/web/favicon_v2.ico" class="icon bookmark-icon"/>https://play.google.com/store/apps/details?id=com.ranpicklotto&amp;hl=ko&amp;gl=US</div></div><img src="https://play-lh.googleusercontent.com/CcWJpCUA_SFi3EbtfHqK0QE6-Ie-_5-19KqNQ3RvIM44iUbxTqIiadeIaKsNJdF6db8" class="bookmark-image"/></a></figure><figure id="9147ccf1-8e03-42f6-8775-33f8a47d5a2d"><a href="https://play.google.com/store/apps/details?id=com.ic.allinonecommuity&amp;hl=ko&amp;gl=US" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">올인원 커뮤니티 - Google Play 앱</div><div class="bookmark-description">뽐뿌, SLR, 인벤, 더쿠, 이토방, 알린넷, MLBPARK, 루리웹, 개드립, 인스티즈, 와이고수, 네이트 판, 보배드림, 에펨 코리아, 웃긴대학, 디시인사이드, 가생이 닷컴, 클리앙, 오늘의 유머, 츄잉 등 커뮤니티 게시글을 실시간으로 한 번에 볼 수 있어요. 원하는 커뮤니티를 ON/OFF 하거나 순서배치 변경이 가능합니다. 스크랩 기능을 이용하여 원하는 커뮤니티 게시판 글을 모아보세요.</div></div><div class="bookmark-href"><img src="https://www.gstatic.com/android/market_images/web/favicon_v2.ico" class="icon bookmark-icon"/>https://play.google.com/store/apps/details?id=com.ic.allinonecommuity&amp;hl=ko&amp;gl=US</div></div><img src="https://play-lh.googleusercontent.com/uV3pscJ9BHQ9MZIGK64SMkE2zihtJcm8XbrYL66tKpfxFf0alDjjiByqs8GPie1fX1U=w600-h300-pc0xffffff-pd" class="bookmark-image"/></a></figure><h3 id="9782e913-6559-439b-ad47-f42e3ea7d8d7" class="">개발 과정 및 상세 기술</h3><ul id="a758321a-070d-4063-9c7e-09981dbbe2bf" class="bulleted-list"><li style="list-style-type:disc">jsoup 라이브러리를 이용하여 데이터 구문분석</li></ul><ul id="f52b16b8-48b1-4677-baf0-f7c98a26ad11" class="bulleted-list"><li style="list-style-type:disc">zxing 라이브러리를 사용하여 QR코드 처리</li></ul><ul id="bf0bd935-22c4-4d2a-b271-17099b231931" class="bulleted-list"><li style="list-style-type:disc">firebase(FCM)를 이용하여 당첨 번호 알림</li></ul><ul id="0df0dd4c-eaa5-4d10-af11-6907b5a7dd63" class="bulleted-list"><li style="list-style-type:disc">로또 판매점 위치를 보여주기 위해 구글맵 사용</li></ul><ul id="518fd0c0-4f2d-40f5-a1e4-da8ea882d1ce" class="bulleted-list"><li style="list-style-type:disc">서버컴(Ubuntu server)에 있는 데이터베이스 정보 데이터 통신을 위한 웹 제작</li></ul><ul id="6afbb4e3-7863-45dc-aab8-bc9414809577" class="bulleted-list"><li style="list-style-type:disc">웹 제작은 스프링 프레임워크와 mybatis 라이브러리 이용</li></ul><ul id="030fb6d7-b2c9-4df2-967a-d200858fe9f2" class="bulleted-list"><li style="list-style-type:disc">패턴 웹(MVC), 안드로이드(MVP, MVVM)</li></ul><ul id="05d49490-27cc-48ae-81fc-135b76c80621" class="bulleted-list"><li style="list-style-type:disc">DB 웹 초기에는 Oracle로 개발하다 라이선스 문제 있을까 봐 Mysql &gt; Mariadb로 정착</li></ul><ul id="b655fb01-8fcb-4267-800e-c27c7388d131" class="bulleted-list"><li style="list-style-type:disc">DB 안드로이드 초기에는 선택지가 없어 SQlite로 개발하다. 그 후에는 Room과 Realm의 성능 비교 후 수정 작업이 많으면 Room 수정보다는 select 중점일 경우에는 Realm을 사용</li></ul><ul id="706bda16-d03b-43d8-b9b5-a964eb8e506c" class="bulleted-list"><li style="list-style-type:disc">안드로이드 서버컴 데이터베이스 정보를 받기 위해 초기에는 선택지가 없어 Asynctask에 HttpURLConnection과 스트림을 사용하여 정형적인 http통신을 사용</li></ul><ul id="e36c77ec-6505-417c-87b1-69c80a4cee50" class="bulleted-list"><li style="list-style-type:disc">후에 livedata + retrofit + databinding 또는 rxjava + databinding 방식으로 설계</li></ul><p id="d3fa715c-12f9-4533-bb99-b0d09d74d218" class="">
+    </p><h1 id="02b9533c-d90a-4f4c-ae57-dcb8424df4dd" class="">코인매수 신호 안드로이드앱(kotlin, node, python) 개발중</h1><div id="0e2979e8-a56d-49ef-a2ee-e7a2aa67d787" class="column-list"><div id="41eaac93-cf15-4f58-af27-3a19b8dcff11" style="width:25%" class="column"><figure id="3da401e1-3a13-4be7-a62e-38961aa8bd85" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/ca.png"><img style="width:203px" src="DEV%203da401e13a134be7a62e38961aa8bd85/ca.png"/></a></figure></div><div id="d9acf44f-afef-4d96-80f0-88552786421d" style="width:75%" class="column"><figure id="18164430-8a3c-4aec-82e4-9bdd277d71b6" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/node.png"><img style="width:644px" src="DEV%203da401e13a134be7a62e38961aa8bd85/node.png"/></a></figure></div></div><figure id="4f0f11b1-2e5d-4d54-91e0-6a4ab3845476" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/pyton.png"><img style="width:871px" src="DEV%203da401e13a134be7a62e38961aa8bd85/pyton.png"/></a></figure><h3 id="510e815c-d2a2-4d79-b620-ea80da1251e9" class="">개발 과정 및 상세 기술</h3><ul id="972549ff-b0a6-40e1-befd-4452ba9229c6" class="bulleted-list"><li style="list-style-type:disc">mvvm, coroutine, clean architecture 형태로 설계</li></ul><ul id="c201d9de-91f7-4525-99ee-b50e68dbb304" class="bulleted-list"><li style="list-style-type:disc">파이썬에서 코인 데이터 정보를 불러와 파이썬 함수를 통해 보조지표 계산 </li></ul><ul id="6dab240f-8d4f-40b0-a7aa-b28706e33aea" class="bulleted-list"><li style="list-style-type:disc">노드에서 파이썬 스크립트 실행 후 매매 신호 조건 설정 후 노드상에서 fcm 메시지 전송</li></ul><ul id="0ab31c8b-c6a4-4298-b2a9-a6052b50f16d" class="bulleted-list"><li style="list-style-type:disc">모바일에서 매매 신호 알림 받기</li></ul><ul id="5b885f06-aed2-4e1d-84ce-64c056401c64" class="bulleted-list"><li style="list-style-type:disc">화면 설계 부분만 남은상태</li></ul><h1 id="ab96d0a7-6937-43f7-b812-882339fd817c" class="">데이터 가공(Python)</h1><figure id="c4c036ef-cca9-4305-99a0-e7ad77494fb0"><a href="https://www.data.go.kr/data/15049340/fileData.do" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">공공데이터 포털</div><div class="bookmark-description">국가에서 보유하고 있는 다양한 데이터를『공공데이터의 제공 및 이용 활성화에 관한 법률(제11956호)』에 따라 개방하여 국민들이 보다 쉽고 용이하게 공유*활용할 수 있도록 공공데이터(Dataset)와 Open API로 제공하는 사이트입니다.</div></div><div class="bookmark-href"><img src="https://www.data.go.kr/images/biz/DATA.ico" class="icon bookmark-icon"/>https://www.data.go.kr/data/15049340/fileData.do</div></div><img src="http://data.go.kr/images/biz/data-search/bg-nation.png" class="bookmark-image"/></a></figure><figure id="8c3956bf-3ff3-4f13-9131-51b8664d8c5e" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled.png"><img style="width:591px" src="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled.png"/></a></figure><figure id="47fadb38-fee7-48cb-b329-9a8a8ebe3146" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled1.png"><img style="width:640px" src="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled1.png"/></a></figure><figure id="190e999b-3494-4dab-a6c2-bf9e23cc7d4a" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled2.png"><img style="width:633px" src="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled2.png"/></a></figure><figure id="3ca5d0a3-3fd8-4fdc-a48f-ea62114f474f" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled3.png"><img style="width:645px" src="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled3.png"/></a></figure><figure id="54ee2137-9bb0-41f5-a1ba-263bb60554e7" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled4.png"><img style="width:650px" src="DEV%203da401e13a134be7a62e38961aa8bd85/Untitled4.png"/></a></figure><h3 id="c1e23310-0170-41c6-9d19-50c8e65df7ab" class="">개발 과정 및 상세기술</h3><ul id="995e7022-5939-46d0-b845-5966e1d90913" class="bulleted-list"><li style="list-style-type:disc">Pandas 라이브러리 필요한 데이터를 추출 및 DB JOIN처럼 두개의 데이터를 병합하기위해 사용</li></ul><ul id="cadf79e6-ec3f-4ac7-a969-5e79b2928a11" class="bulleted-list"><li style="list-style-type:disc">Numpy 라이브러리 컬럼의 데이터 타입을 변경과 배열을 만들기위해 사용</li></ul><ul id="d40c8bd8-14ac-4567-b8ca-752434ebe404" class="bulleted-list"><li style="list-style-type:disc">matplotlib 라이브러리 가공한 데이터를 바탕으로 시각화하기위해 사용</li></ul><p id="59822338-6ec9-4f8b-aa1b-fa30deb741eb" class="">
+    </p><p id="4ea63665-5fbd-401b-a08b-a458151b0d35" class="">
+    </p><h1 id="b8e21fe3-7540-4a4f-b2e7-0e405c39d839" class="">WEB(개인 블로그 제작중)</h1><figure id="1f219cf6-2c25-4198-89a8-c0b654dbadac" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/blog.gif"><img style="width:1990px" src="DEV%203da401e13a134be7a62e38961aa8bd85/blog.gif"/></a></figure><h3 id="6d4d797d-d94d-4a6f-8e11-d90c87d5a239" class="">개발 과정 및 상세기술 (진행형)</h3><ul id="a71e425d-0e44-40d5-94f9-80721b4b4424" class="bulleted-list"><li style="list-style-type:disc"> 안드로이드에 사용된 웹서버와 차이점 <ol type="1" id="cdf06a73-45d4-4c72-8118-516543be2c8e" class="numbered-list" start="1"><li>Spring &gt; Spring boot(restful api)</li></ol><ol type="1" id="b8b5a5b2-db98-409c-9f1a-66662189be73" class="numbered-list" start="2"><li>Mybatis &gt; Spring-Data-JPA(ORM)</li></ol><ol type="1" id="c6a21dd4-40ca-487f-940c-dd96290218c5" class="numbered-list" start="3"><li>Docker를 이용한 배포(예정)</li></ol></li></ul><ul id="424d1117-b5a7-4dbd-889a-e06c1f101e7b" class="bulleted-list"><li style="list-style-type:disc">프론트 프레임워크 react 사용</li></ul><ul id="2fc2b513-8460-40c5-8741-2063ff5e25c0" class="bulleted-list"><li style="list-style-type:disc">restful api 방식으로 처리하기때문에 네트워크 통신을위해 axios와 fech 중 fech 이용 (react 업데이트 주기가 빠르다고 판단되어 내장라이브러리인 fech 선택)</li></ul><ul id="e5c545c9-0738-44b6-a194-3e5b89526300" class="bulleted-list"><li style="list-style-type:disc">redux는 개인 블로그다보니 깊이가 깊지않아 사용 여부는 추후에 판단</li></ul><p id="c4760c7c-3c72-4dd7-b8f9-733824b82b11" class="">
+    </p><p id="c2857e3b-ff6b-42e7-a4d7-6b9eeb7aae59" class="">
+    </p><h1 id="024abf59-3a39-4e09-ac1f-ffe84a74973e" class="">IOS(앱 제작중)gif는 브라우저로 확인가능</h1><div id="6fb5f4c7-9a58-4eda-9511-c24b8732182f" class="column-list"><div id="1ea9291b-c10b-47f4-9695-7a9e508b82cf" style="width:33.33333333333333%" class="column"><figure id="d3fd3b17-e99c-4663-bc44-da8fbd657b62" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/ios1.gif"><img style="width:240px" src="DEV%203da401e13a134be7a62e38961aa8bd85/ios1.gif"/></a></figure></div><div id="64f9cd31-c46a-45e8-bf84-aff4f6b7289b" style="width:33.33333333333333%" class="column"><figure id="01ccc050-64fc-4ae4-a912-87547b634158" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/ios2.gif"><img style="width:240px" src="DEV%203da401e13a134be7a62e38961aa8bd85/ios2.gif"/></a></figure><p id="1450077f-136f-4c70-87ee-41454be60eb1" class="">
+    </p></div><div id="ce2abac0-db8b-4db1-9473-3622073a501d" style="width:33.33333333333333%" class="column"><figure id="a83a20fe-9dd3-4f8a-bed3-7921074fda53" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/ios3.gif"><img style="width:240px" src="DEV%203da401e13a134be7a62e38961aa8bd85/ios3.gif"/></a></figure></div></div><div id="f6570c50-6091-4d2b-9221-152099031d99" class="column-list"><div id="8dc0cc1a-7da5-4c72-8ad8-96600bf7375d" style="width:33.333333333333336%" class="column"><figure id="ecd4833a-a029-46ae-bc33-1ae819fc757b" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/ios4.gif"><img style="width:240px" src="DEV%203da401e13a134be7a62e38961aa8bd85/ios4.gif"/></a></figure></div><div id="af5364cb-14b8-4529-8133-15b31095238f" style="width:33.333333333333336%" class="column"><figure id="bf46aaa2-9e42-4ecb-961e-f6ca77ee94dd" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/mynum.gif"><img style="width:240px" src="DEV%203da401e13a134be7a62e38961aa8bd85/mynum.gif"/></a></figure></div><div id="90b3f846-2f81-437c-ad44-5fd8432374fd" style="width:33.33333333333333%" class="column"><figure id="54c4799f-e831-4cff-931b-222f4ad5a3e5" class="image"><a href="DEV%203da401e13a134be7a62e38961aa8bd85/home.gif"><img style="width:240px" src="DEV%203da401e13a134be7a62e38961aa8bd85/home.gif"/></a></figure><p id="21e98dc5-b916-4d8e-823b-5bd9bd4ca09e" class="">
+    </p></div></div><div id="5f0300e8-bcfc-4edb-92dc-38350bf408ae" class="column-list"><div id="e33467e7-3440-4553-810f-2fc29d1f322d" style="width:93.75%" class="column"><h3 id="55f37cf3-0c03-4c72-9f10-e56f6d547050" class="">개발 과정 및 상세 기술 (진행형)</h3><ul id="d9e0722c-44de-4e50-bb80-966c46b78923" class="bulleted-list"><li style="list-style-type:disc">firebase(FCM)를 이용하여 당첨 번호 알림</li></ul><ul id="a57e6544-93d8-492a-85c5-4a302c4fc8f5" class="bulleted-list"><li style="list-style-type:disc">IOS 코어 디비는 realm</li></ul><ul id="577ea080-aeec-440f-910b-e4fa7d9445e6" class="bulleted-list"><li style="list-style-type:disc">웹 스프링부트 restful 방식으로 구현</li></ul><ul id="df2c13b1-5dfc-4889-bae3-bea01c972e14" class="bulleted-list"><li style="list-style-type:disc">컴바인을 이용하여 웹이랑 통신</li></ul><ul id="15a30abf-4109-42cb-904b-1a36773ef1ed" class="bulleted-list"><li style="list-style-type:disc">전체적인 UI 변경 예정 </li></ul><p id="0f3dce1c-0c1d-4291-9f22-6617b2e7f0c0" class="">
+    </p></div><div id="c07245dd-3db3-48e0-8954-f9566f96f0d7" style="width:6.25%" class="column"><p id="f0142b3f-618c-4f80-9ce8-3b1e0b5b4317" class="">
+    </p></div></div><p id="3c7d93f9-b5f7-4ef9-837f-9923c9559055" class="">
+    </p></div></article></body></html> -->
