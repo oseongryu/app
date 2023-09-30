@@ -1,11 +1,13 @@
 [
     {
         "version": "1.0.0",
+        "showAds": false,
         "aosRequiredUpdate": true,
         "iosRequiredUpdate": true
     },
     {
         "version": "1.0.1",
+        "showAds": true,
         "aosRequiredUpdate": false,
         "iosRequiredUpdate": false
     }
