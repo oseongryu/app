@@ -1,12 +1,12 @@
 [
     {
-        "version": "1.0",
+        "version": "1.0.0",
         "aosRequiredUpdate": true,
-        "iosRequiredUpdate": false
+        "iosRequiredUpdate": true
     },
     {
-        "version": "1.1",
-        "aosRequiredUpdate": true,
+        "version": "1.0.1",
+        "aosRequiredUpdate": false,
         "iosRequiredUpdate": false
     }
 
