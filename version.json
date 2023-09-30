@@ -7,7 +7,7 @@
     },
     {
         "version": "1.0.1",
-        "showAds": true,
+        "showAds": false,
         "aosRequiredUpdate": false,
         "iosRequiredUpdate": false
     }
