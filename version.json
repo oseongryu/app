@@ -10,6 +10,18 @@
         "showAds": true,
         "aosRequiredUpdate": false,
         "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.2",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.3",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
     }
 
 ]
