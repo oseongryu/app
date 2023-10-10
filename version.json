@@ -22,6 +22,47 @@
         "showAds": true,
         "aosRequiredUpdate": false,
         "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.4",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.5",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.6",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.7",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.8",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.9",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
+    },
+    {
+        "version": "1.0.10",
+        "showAds": true,
+        "aosRequiredUpdate": false,
+        "iosRequiredUpdate": false
     }
-
 ]
