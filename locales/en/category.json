@@ -1,42 +1,12 @@
 [
-  {
-    "id": "1",
-    "text": "Hot",
-    "src": "https://static.thenounproject.com/png/357665-200.png"
-  },
-  {
-    "id": "2",
-    "text": "RealTime",
-    "src": "https://static.thenounproject.com/png/5342619-200.png"
-  },
-  {
-    "id": "3",
-    "text": "Game",
-    "src": "https://static.thenounproject.com/png/4051862-200.png"
-  },
-  {
-    "id": "4",
-    "text": "Sports",
-    "src": "https://static.thenounproject.com/png/4888415-200.png"
-  },
-  {
-    "id": "5",
-    "text": "Music",
-    "src": "https://static.thenounproject.com/png/6198215-200.png"
-  },
-  {
-    "id": "6",
-    "text": "Fashion",
-    "src": "https://static.thenounproject.com/png/3513464-200.png"
-  },
-  {
-    "id": "7",
-    "text": "Cooking",
-    "src": "https://static.thenounproject.com/png/2812421-200.png"
-  },
-  {
-    "id": "8",
-    "text": "Talent",
-    "src": "https://static.thenounproject.com/png/5691482-200.png"
-  }
-]
+    {
+      "id": "1",
+      "text": "Hot",
+      "src": "https://static.thenounproject.com/png/357665-200.png"
+    },
+    {
+      "id": "2",
+      "text": "RealTime",
+      "src": "https://static.thenounproject.com/png/5342619-200.png"
+    }
+  ]
